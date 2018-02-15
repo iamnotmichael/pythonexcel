@@ -9,6 +9,7 @@ os.chdir('C:/Users/Michael/OneDrive/EXCEL PYTHON/FILES')
 os.getcwd()
 folderpath = 'C:/Users/Michael/OneDrive/EXCEL PYTHON/FILES/mass'
 
+# Create variable with list of all files in above folder
 from os import listdir
 from os.path import isfile, join
 folderfiles = [f for f in listdir(folderpath) if isfile(join(folderpath, f))]
@@ -38,7 +39,7 @@ def getlocations(sheet):
             locationDict['Credit.Stips.Zone.4'].append(g.row)
     return locationDict
 
-# COPY DATA
+# Read and Copy Excel Data
 def copydata(sheet):
     exceldate = finddate(sheet)
     locationDict = getlocations(sheet)
